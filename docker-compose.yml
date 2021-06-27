@@ -1,0 +1,16 @@
+version: '2.3'
+services:
+  default: &default
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    user: "${HOST_UID}:${HOST_GID}"
+    environment:
+      - HOME=/home/user/
+      - REFRESH_TOKEN
+    working_dir: /home/user/work
+    command: "jupyter lab --ip=0.0.0.0 --no-browser"
+    volumes:
+      - "$PWD:/home/user/work"
+    ports:
+      - '$PORT:8888' #HOST:CONTAINER

@@ -1,0 +1,2 @@
+shap==0.38.1
+memory_profiler==0.58.0

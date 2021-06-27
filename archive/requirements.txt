@@ -1,0 +1,2 @@
+lightgbm==3.0.0
+joblib==1.0.0
